@@ -2,7 +2,7 @@ drop table if exists login;
  create table if not exists login
 (
     login_id        INTEGER
-        primary key autoincrement,
+        primary key AUTO_INCREMENT,
     wx_open_id      VARCHAR(255),
     phone_number    VARCHAR(255),
     password        VARCHAR(255),

@@ -7,4 +7,4 @@ create table `message_center` (
 	is_read	BOOL	not null,
 	create_time	DATETIME	,
 	primary key (message_center_id)
-);insert into	message_center	(is_read,message_center_id,create_time,type_enum_message_type_enum_id_1,title,content)	values	("false","1","2024-07-01 12:00:00","1","系统维护通知","平台将于明天凌晨2点进行维护。");
+);insert into	message_center	(is_read,message_center_id,create_time,type_enum_message_type_enum_id_1,title,content)	values	(0,1,'2024-07-01 12:00:00',1,'系统维护通知','平台将于明天凌晨2点进行维护。');
