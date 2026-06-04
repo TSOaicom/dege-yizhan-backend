@@ -69,8 +69,8 @@ CREATE TABLE `system_messages`
     `content`     TEXT NULL COMMENT '内容，适用于通知和公告栏',
     `image_url`   VARCHAR(255) COMMENT '适用于轮播图：图片URL',
     `url`         VARCHAR(255) COMMENT '适用于轮播图：跳转的URL',
-    `create_time` DATE DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间', -- 创建时间
-    `update_time` DATE DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+    `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_time` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 );
 
 
