@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.UserInfoAllMapper">
+    <sql id="user_info_list_sql">
+        select
+        ui.password   ,
+        cte.type_name   ,
+        ui.car_plate   ,
+        ui.cert_status_enum_cert_status_enum_id_1   ,
+        ui.city   ,
+        ui.phone_number   ,
+        ui.real_name   ,
+        ui.continue_active_days   ,
+        ui.user_info_id   ,
+        ui.car_type_enum_car_type_enum_id_1   ,
+        ui.active_days   ,
+        cse.status   
+
+
+        FROM user_info ui
+        left join car_type_enum cte on ui.car_type_enum_car_type_enum_id_1 = cte.car_type_enum_id
+        left join cert_status_enum cse on ui.cert_status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+        </sql>
+
+        <resultMap id="selectListNewMap" type="com.kuafu.web.entity.UserInfoAll">
+
+        <result property="password" column="password"/>
+
+        <result property="typeName" column="type_name"/>
+
+        <result property="carPlate" column="car_plate"/>
+
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+
+        <result property="city" column="city"/>
+
+        <result property="phoneNumber" column="phone_number"/>
+
+        <result property="realName" column="real_name"/>
+
+        <result property="continueActiveDays" column="continue_active_days"/>
+
+        <result property="userInfoId" column="user_info_id"/>
+
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+
+        <result property="activeDays" column="active_days"/>
+
+        <result property="status" column="status"/>
+
+
+
+                <collection property="avatar" ofType="com.kuafu.common.entity.StaticResource">
+                            <id property="resourceId" column="avatar_resource_id"/>
+                            <result property="resourceName" column="avatar_resource_name"/>
+                            <result property="resourcePath" column="avatar_resource_path"/>
+                            <result property="relatedTableName" column="avatar_related_table_name"/>
+                            <result property="relatedTableKey" column="avatar_related_table_key"/>
+                            <result property="relateTableColumnName" column="avatar_relate_table_column_name"/>
+                </collection>
+
+        </resultMap>
+
+<select id="selectListNew"  resultMap="selectListNewMap">
+select
+ui.password   ,
+cte.type_name   ,
+ui.car_plate   ,
+ui.cert_status_enum_cert_status_enum_id_1   ,
+ui.city   ,
+ui.phone_number   ,
+ui.real_name   ,
+ui.continue_active_days   ,
+ui.user_info_id   ,
+ui.car_type_enum_car_type_enum_id_1   ,
+ui.active_days   ,
+cse.status   
+
+        ,avatar.resource_id as  avatar_resource_id
+        ,avatar.resource_name as avatar_resource_name
+        ,avatar.resource_path as  avatar_resource_path
+        ,avatar.related_table_name as  avatar_related_table_name
+        ,avatar.related_table_key as  avatar_related_table_key
+        ,avatar.relate_table_column_name as avatar_relate_table_column_name
+
+
+        FROM user_info ui
+        left join
+
+        car_type_enum
+
+        cte on ui.car_type_enum_car_type_enum_id_1 = cte.car_type_enum_id
+        left join
+
+        cert_status_enum
+
+        cse on ui.cert_status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+        left join
+        (select resource_id,
+        resource_name,
+        resource_path,
+        related_table_name,
+        related_table_key,
+        relate_table_column_name
+        from static_resources where related_table_name='user_info' and relate_table_column_name='avatar') as avatar
+        on avatar.related_table_key=ui.user_info_id
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectList" resultType="com.kuafu.web.entity.UserInfoAll">
+select
+ui.password   ,
+cte.type_name   ,
+ui.car_plate   ,
+ui.cert_status_enum_cert_status_enum_id_1   ,
+ui.city   ,
+ui.phone_number   ,
+ui.real_name   ,
+ui.continue_active_days   ,
+ui.user_info_id   ,
+ui.car_type_enum_car_type_enum_id_1   ,
+ui.active_days   ,
+cse.status   
+
+
+        FROM user_info ui
+        left join car_type_enum cte on ui.car_type_enum_car_type_enum_id_1 = cte.car_type_enum_id
+        left join cert_status_enum cse on ui.cert_status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectPage" resultType="com.kuafu.web.entity.UserInfoAll">
+select
+ui.password  ,
+cte.type_name  ,
+ui.car_plate  ,
+ui.cert_status_enum_cert_status_enum_id_1  ,
+ui.city  ,
+ui.phone_number  ,
+ui.real_name  ,
+ui.continue_active_days  ,
+ui.user_info_id  ,
+ui.car_type_enum_car_type_enum_id_1  ,
+ui.active_days  ,
+cse.status  
+
+
+
+        FROM user_info ui
+        left join car_type_enum cte on ui.car_type_enum_car_type_enum_id_1 = cte.car_type_enum_id
+        left join cert_status_enum cse on ui.cert_status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectById" resultType="com.kuafu.web.entity.UserInfoAll">
+select
+ui.password  ,
+cte.type_name  ,
+ui.car_plate  ,
+ui.cert_status_enum_cert_status_enum_id_1  ,
+ui.city  ,
+ui.phone_number  ,
+ui.real_name  ,
+ui.continue_active_days  ,
+ui.user_info_id  ,
+ui.car_type_enum_car_type_enum_id_1  ,
+ui.active_days  ,
+cse.status  
+
+
+        FROM user_info ui
+        left join car_type_enum cte on ui.car_type_enum_car_type_enum_id_1 = cte.car_type_enum_id
+        left join cert_status_enum cse on ui.cert_status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+
+        where ui.user_info_id = #{id}
+        </select>
+
+<select id="selectCount" resultType="java.lang.Long">
+select
+count(*)
+
+
+
+FROM user_info ui
+left join car_type_enum cte on ui.car_type_enum_car_type_enum_id_1 = cte.car_type_enum_id
+left join cert_status_enum cse on ui.cert_status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+
+${ew.customSqlSegment}
+
+
+        </select>
+
+        </mapper>

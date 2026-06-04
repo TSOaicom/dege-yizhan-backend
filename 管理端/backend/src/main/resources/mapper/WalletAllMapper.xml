@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.WalletAllMapper">
+
+
+        <select id="selectList" resultType="com.kuafu.web.entity.WalletAll">
+            select
+            w.wallet_id   ,
+            w.user_info_user_info_id_1   ,
+            w.member_expire   ,
+            ui.cert_status_enum_cert_status_enum_id_1   ,
+            ui.city   ,
+            w.member_type_enum_member_type_enum_id_1   ,
+            ui.active_days   ,
+            ui.phone_number   ,
+            ui.avatar_resource_key   ,
+            ui.car_type_enum_car_type_enum_id_1   ,
+            ui.real_name   ,
+            ui.continue_active_days   ,
+            ui.password   ,
+            w.balance   ,
+            ui.car_plate   ,
+            mte.type_name   
+            FROM wallet w
+                left join user_info ui on w.user_info_user_info_id_1 = ui.user_info_id
+                left join member_type_enum mte on w.member_type_enum_member_type_enum_id_1 = mte.member_type_enum_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectPage" resultType="com.kuafu.web.entity.WalletAll">
+            select
+            w.wallet_id  ,
+            w.user_info_user_info_id_1  ,
+            w.member_expire  ,
+            ui.cert_status_enum_cert_status_enum_id_1  ,
+            ui.city  ,
+            w.member_type_enum_member_type_enum_id_1  ,
+            ui.active_days  ,
+            ui.phone_number  ,
+            ui.avatar_resource_key  ,
+            ui.car_type_enum_car_type_enum_id_1  ,
+            ui.real_name  ,
+            ui.continue_active_days  ,
+            ui.password  ,
+            w.balance  ,
+            ui.car_plate  ,
+            mte.type_name  
+            FROM wallet w
+                left join user_info ui on w.user_info_user_info_id_1 = ui.user_info_id
+                left join member_type_enum mte on w.member_type_enum_member_type_enum_id_1 = mte.member_type_enum_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectById" resultType="com.kuafu.web.entity.WalletAll">
+            select
+            w.wallet_id  ,
+            w.user_info_user_info_id_1  ,
+            w.member_expire  ,
+            ui.cert_status_enum_cert_status_enum_id_1  ,
+            ui.city  ,
+            w.member_type_enum_member_type_enum_id_1  ,
+            ui.active_days  ,
+            ui.phone_number  ,
+            ui.avatar_resource_key  ,
+            ui.car_type_enum_car_type_enum_id_1  ,
+            ui.real_name  ,
+            ui.continue_active_days  ,
+            ui.password  ,
+            w.balance  ,
+            ui.car_plate  ,
+            mte.type_name  
+            FROM wallet w
+                left join user_info ui on w.user_info_user_info_id_1 = ui.user_info_id
+                left join member_type_enum mte on w.member_type_enum_member_type_enum_id_1 = mte.member_type_enum_id
+            where w.wallet_id = #{id}
+        </select>
+
+
+</mapper>

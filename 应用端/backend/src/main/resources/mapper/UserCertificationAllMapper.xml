@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.UserCertificationAllMapper">
+    <sql id="user_certification_list_sql">
+        select
+        uc.user_info_user_info_id_1   ,
+        ui.car_plate   ,
+        ui.cert_status_enum_cert_status_enum_id_1   ,
+        ui.city   ,
+        uc.remark   ,
+        ui.real_name   ,
+        uc.user_certification_id   ,
+        ui.password   ,
+        uc.status_enum_cert_status_enum_id_1   ,
+        ui.phone_number   ,
+        ui.continue_active_days   ,
+        ui.car_type_enum_car_type_enum_id_1   ,
+        ui.active_days   ,
+        cse.status   
+
+
+        FROM user_certification uc
+        left join user_info ui on uc.user_info_user_info_id_1 = ui.user_info_id
+        left join cert_status_enum cse on uc.status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+        </sql>
+
+        <resultMap id="selectListNewMap" type="com.kuafu.web.entity.UserCertificationAll">
+
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+
+        <result property="carPlate" column="car_plate"/>
+
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+
+        <result property="city" column="city"/>
+
+        <result property="remark" column="remark"/>
+
+        <result property="realName" column="real_name"/>
+
+        <result property="userCertificationId" column="user_certification_id"/>
+
+        <result property="password" column="password"/>
+
+        <result property="statusEnumCertStatusEnumId1" column="status_enum_cert_status_enum_id_1"/>
+
+        <result property="phoneNumber" column="phone_number"/>
+
+        <result property="continueActiveDays" column="continue_active_days"/>
+
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+
+        <result property="activeDays" column="active_days"/>
+
+        <result property="status" column="status"/>
+
+
+
+                <collection property="driverLicense" ofType="com.kuafu.common.entity.StaticResource">
+                            <id property="resourceId" column="driver_license_resource_id"/>
+                            <result property="resourceName" column="driver_license_resource_name"/>
+                            <result property="resourcePath" column="driver_license_resource_path"/>
+                            <result property="relatedTableName" column="driver_license_related_table_name"/>
+                            <result property="relatedTableKey" column="driver_license_related_table_key"/>
+                            <result property="relateTableColumnName" column="driver_license_relate_table_column_name"/>
+                </collection>
+                <collection property="vehicleLicense" ofType="com.kuafu.common.entity.StaticResource">
+                            <id property="resourceId" column="vehicle_license_resource_id"/>
+                            <result property="resourceName" column="vehicle_license_resource_name"/>
+                            <result property="resourcePath" column="vehicle_license_resource_path"/>
+                            <result property="relatedTableName" column="vehicle_license_related_table_name"/>
+                            <result property="relatedTableKey" column="vehicle_license_related_table_key"/>
+                            <result property="relateTableColumnName" column="vehicle_license_relate_table_column_name"/>
+                </collection>
+                <collection property="taxiLicense" ofType="com.kuafu.common.entity.StaticResource">
+                            <id property="resourceId" column="taxi_license_resource_id"/>
+                            <result property="resourceName" column="taxi_license_resource_name"/>
+                            <result property="resourcePath" column="taxi_license_resource_path"/>
+                            <result property="relatedTableName" column="taxi_license_related_table_name"/>
+                            <result property="relatedTableKey" column="taxi_license_related_table_key"/>
+                            <result property="relateTableColumnName" column="taxi_license_relate_table_column_name"/>
+                </collection>
+
+        </resultMap>
+
+<select id="selectListNew"  resultMap="selectListNewMap">
+select
+uc.user_info_user_info_id_1   ,
+ui.car_plate   ,
+ui.cert_status_enum_cert_status_enum_id_1   ,
+ui.city   ,
+uc.remark   ,
+ui.real_name   ,
+uc.user_certification_id   ,
+ui.password   ,
+uc.status_enum_cert_status_enum_id_1   ,
+ui.phone_number   ,
+ui.continue_active_days   ,
+ui.car_type_enum_car_type_enum_id_1   ,
+ui.active_days   ,
+cse.status   
+
+        ,driver_license.resource_id as  driver_license_resource_id
+        ,driver_license.resource_name as driver_license_resource_name
+        ,driver_license.resource_path as  driver_license_resource_path
+        ,driver_license.related_table_name as  driver_license_related_table_name
+        ,driver_license.related_table_key as  driver_license_related_table_key
+        ,driver_license.relate_table_column_name as driver_license_relate_table_column_name
+        ,vehicle_license.resource_id as  vehicle_license_resource_id
+        ,vehicle_license.resource_name as vehicle_license_resource_name
+        ,vehicle_license.resource_path as  vehicle_license_resource_path
+        ,vehicle_license.related_table_name as  vehicle_license_related_table_name
+        ,vehicle_license.related_table_key as  vehicle_license_related_table_key
+        ,vehicle_license.relate_table_column_name as vehicle_license_relate_table_column_name
+        ,taxi_license.resource_id as  taxi_license_resource_id
+        ,taxi_license.resource_name as taxi_license_resource_name
+        ,taxi_license.resource_path as  taxi_license_resource_path
+        ,taxi_license.related_table_name as  taxi_license_related_table_name
+        ,taxi_license.related_table_key as  taxi_license_related_table_key
+        ,taxi_license.relate_table_column_name as taxi_license_relate_table_column_name
+
+
+        FROM user_certification uc
+        left join
+
+        user_info
+
+        ui on uc.user_info_user_info_id_1 = ui.user_info_id
+        left join
+
+        cert_status_enum
+
+        cse on uc.status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+        left join
+        (select resource_id,
+        resource_name,
+        resource_path,
+        related_table_name,
+        related_table_key,
+        relate_table_column_name
+        from static_resources where related_table_name='user_certification' and relate_table_column_name='driver_license') as driver_license
+        on driver_license.related_table_key=uc.user_certification_id
+        left join
+        (select resource_id,
+        resource_name,
+        resource_path,
+        related_table_name,
+        related_table_key,
+        relate_table_column_name
+        from static_resources where related_table_name='user_certification' and relate_table_column_name='vehicle_license') as vehicle_license
+        on vehicle_license.related_table_key=uc.user_certification_id
+        left join
+        (select resource_id,
+        resource_name,
+        resource_path,
+        related_table_name,
+        related_table_key,
+        relate_table_column_name
+        from static_resources where related_table_name='user_certification' and relate_table_column_name='taxi_license') as taxi_license
+        on taxi_license.related_table_key=uc.user_certification_id
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectList" resultType="com.kuafu.web.entity.UserCertificationAll">
+select
+uc.user_info_user_info_id_1   ,
+ui.car_plate   ,
+ui.cert_status_enum_cert_status_enum_id_1   ,
+ui.city   ,
+uc.remark   ,
+ui.real_name   ,
+uc.user_certification_id   ,
+ui.password   ,
+uc.status_enum_cert_status_enum_id_1   ,
+ui.phone_number   ,
+ui.continue_active_days   ,
+ui.car_type_enum_car_type_enum_id_1   ,
+ui.active_days   ,
+cse.status   
+
+
+        FROM user_certification uc
+        left join user_info ui on uc.user_info_user_info_id_1 = ui.user_info_id
+        left join cert_status_enum cse on uc.status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectPage" resultType="com.kuafu.web.entity.UserCertificationAll">
+select
+uc.user_info_user_info_id_1  ,
+ui.car_plate  ,
+ui.cert_status_enum_cert_status_enum_id_1  ,
+ui.city  ,
+uc.remark  ,
+ui.real_name  ,
+uc.user_certification_id  ,
+ui.password  ,
+uc.status_enum_cert_status_enum_id_1  ,
+ui.phone_number  ,
+ui.continue_active_days  ,
+ui.car_type_enum_car_type_enum_id_1  ,
+ui.active_days  ,
+cse.status  
+
+
+
+        FROM user_certification uc
+        left join user_info ui on uc.user_info_user_info_id_1 = ui.user_info_id
+        left join cert_status_enum cse on uc.status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectById" resultType="com.kuafu.web.entity.UserCertificationAll">
+select
+uc.user_info_user_info_id_1  ,
+ui.car_plate  ,
+ui.cert_status_enum_cert_status_enum_id_1  ,
+ui.city  ,
+uc.remark  ,
+ui.real_name  ,
+uc.user_certification_id  ,
+ui.password  ,
+uc.status_enum_cert_status_enum_id_1  ,
+ui.phone_number  ,
+ui.continue_active_days  ,
+ui.car_type_enum_car_type_enum_id_1  ,
+ui.active_days  ,
+cse.status  
+
+
+        FROM user_certification uc
+        left join user_info ui on uc.user_info_user_info_id_1 = ui.user_info_id
+        left join cert_status_enum cse on uc.status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+
+        where uc.user_certification_id = #{id}
+        </select>
+
+<select id="selectCount" resultType="java.lang.Long">
+select
+count(*)
+
+
+
+FROM user_certification uc
+left join user_info ui on uc.user_info_user_info_id_1 = ui.user_info_id
+left join cert_status_enum cse on uc.status_enum_cert_status_enum_id_1 = cse.cert_status_enum_id
+
+
+
+${ew.customSqlSegment}
+
+
+        </select>
+
+        </mapper>

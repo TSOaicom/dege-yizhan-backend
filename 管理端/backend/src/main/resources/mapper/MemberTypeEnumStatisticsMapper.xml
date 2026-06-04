@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.MemberTypeEnumStatisticsMapper">
+
+    <resultMap id="member_type_enum_member_type_enum_id_status_statistic_0d9c3cae_countStatistic0" type="com.kuafu.web.entity.MemberTypeEnumMemberTypeEnumIdStatusStatistic0d9c3caeCount$Statistic0">
+        <result property="memberTypeEnumId" column="member_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="member_type_enum_member_type_enum_id_status_statistic_691c8685_countStatistic0" type="com.kuafu.web.entity.MemberTypeEnumMemberTypeEnumIdStatusStatistic691c8685Count$Statistic0">
+        <result property="memberTypeEnumId" column="member_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="member_type_enum_member_type_enum_id_status_statistic_4f5a8e3f_countStatistic0" type="com.kuafu.web.entity.MemberTypeEnumMemberTypeEnumIdStatusStatistic4f5a8e3fCount$Statistic0">
+        <result property="memberTypeEnumId" column="member_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="member_type_enum_member_type_enum_id_status_statistic_0d9c3cae_count" resultMap="member_type_enum_member_type_enum_id_status_statistic_0d9c3cae_countStatistic0">
+        select
+                mte.member_type_enum_id  
+                ,  count(mte.member_type_enum_id)
+ as result_kf
+        FROM member_type_enum mte
+
+        ${ew.customSqlSegment}
+        group by 
+            mte.member_type_enum_id
+    </select>
+
+
+    <select id="member_type_enum_member_type_enum_id_status_statistic_691c8685_count" resultMap="member_type_enum_member_type_enum_id_status_statistic_691c8685_countStatistic0">
+        select
+                mte.member_type_enum_id  
+                ,  count(mte.member_type_enum_id)
+ as result_kf
+        FROM member_type_enum mte
+
+        ${ew.customSqlSegment}
+        group by 
+            mte.member_type_enum_id
+    </select>
+
+
+    <select id="member_type_enum_member_type_enum_id_status_statistic_4f5a8e3f_count" resultMap="member_type_enum_member_type_enum_id_status_statistic_4f5a8e3f_countStatistic0">
+        select
+                mte.member_type_enum_id  
+                ,  count(mte.member_type_enum_id)
+ as result_kf
+        FROM member_type_enum mte
+
+        ${ew.customSqlSegment}
+        group by 
+            mte.member_type_enum_id
+    </select>
+
+
+
+</mapper>

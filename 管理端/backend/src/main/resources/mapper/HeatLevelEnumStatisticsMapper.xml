@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.HeatLevelEnumStatisticsMapper">
+
+    <resultMap id="heat_level_enum_heat_level_enum_id_status_statistic_9911c871_countStatistic0" type="com.kuafu.web.entity.HeatLevelEnumHeatLevelEnumIdStatusStatistic9911c871Count$Statistic0">
+        <result property="heatLevelEnumId" column="heat_level_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="heat_level_enum_heat_level_enum_id_status_statistic_05b8f60f_countStatistic0" type="com.kuafu.web.entity.HeatLevelEnumHeatLevelEnumIdStatusStatistic05b8f60fCount$Statistic0">
+        <result property="heatLevelEnumId" column="heat_level_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="heat_level_enum_heat_level_enum_id_status_statistic_7c58e626_countStatistic0" type="com.kuafu.web.entity.HeatLevelEnumHeatLevelEnumIdStatusStatistic7c58e626Count$Statistic0">
+        <result property="heatLevelEnumId" column="heat_level_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="heat_level_enum_heat_level_enum_id_status_statistic_9911c871_count" resultMap="heat_level_enum_heat_level_enum_id_status_statistic_9911c871_countStatistic0">
+        select
+                hle.heat_level_enum_id  
+                ,  count(hle.heat_level_enum_id)
+ as result_kf
+        FROM heat_level_enum hle
+
+        ${ew.customSqlSegment}
+        group by 
+            hle.heat_level_enum_id
+    </select>
+
+
+    <select id="heat_level_enum_heat_level_enum_id_status_statistic_05b8f60f_count" resultMap="heat_level_enum_heat_level_enum_id_status_statistic_05b8f60f_countStatistic0">
+        select
+                hle.heat_level_enum_id  
+                ,  count(hle.heat_level_enum_id)
+ as result_kf
+        FROM heat_level_enum hle
+
+        ${ew.customSqlSegment}
+        group by 
+            hle.heat_level_enum_id
+    </select>
+
+
+    <select id="heat_level_enum_heat_level_enum_id_status_statistic_7c58e626_count" resultMap="heat_level_enum_heat_level_enum_id_status_statistic_7c58e626_countStatistic0">
+        select
+                hle.heat_level_enum_id  
+                ,  count(hle.heat_level_enum_id)
+ as result_kf
+        FROM heat_level_enum hle
+
+        ${ew.customSqlSegment}
+        group by 
+            hle.heat_level_enum_id
+    </select>
+
+
+
+</mapper>

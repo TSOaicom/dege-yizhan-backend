@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.WalletStatisticsMapper">
+
+    <resultMap id="wallet_statistic_972c1e1f_countStatistic0" type="com.kuafu.web.entity.WalletStatistic972c1e1fCount$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_statistic_5f0bb06d_countStatistic0" type="com.kuafu.web.entity.WalletStatistic5f0bb06dCount$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_statistic_43ce330b_countStatistic0" type="com.kuafu.web.entity.WalletStatistic43ce330bCount$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_statistic_b6576e46_countStatistic0" type="com.kuafu.web.entity.WalletStatisticB6576e46Count$Statistic0">
+        <result property="memberTypeEnumMemberTypeEnumId1" column="member_type_enum_member_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_statistic_cedabba8_countStatistic0" type="com.kuafu.web.entity.WalletStatisticCedabba8Count$Statistic0">
+        <result property="memberTypeEnumMemberTypeEnumId1" column="member_type_enum_member_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_statistic_5c2132b0_countStatistic0" type="com.kuafu.web.entity.WalletStatistic5c2132b0Count$Statistic0">
+        <result property="memberTypeEnumMemberTypeEnumId1" column="member_type_enum_member_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_member_type_enum_member_type_enum_id_1_status_statistic_174d5462_countStatistic0" type="com.kuafu.web.entity.WalletMemberTypeEnumMemberTypeEnumId1StatusStatistic174d5462Count$Statistic0">
+        <result property="memberTypeEnumMemberTypeEnumId1" column="member_type_enum_member_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_member_type_enum_member_type_enum_id_1_status_statistic_fb152bad_countStatistic0" type="com.kuafu.web.entity.WalletMemberTypeEnumMemberTypeEnumId1StatusStatisticFb152badCount$Statistic0">
+        <result property="memberTypeEnumMemberTypeEnumId1" column="member_type_enum_member_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_member_type_enum_member_type_enum_id_1_status_statistic_0f98b43f_countStatistic0" type="com.kuafu.web.entity.WalletMemberTypeEnumMemberTypeEnumId1StatusStatistic0f98b43fCount$Statistic0">
+        <result property="memberTypeEnumMemberTypeEnumId1" column="member_type_enum_member_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_member_expire_datetime_statistic_7111d84f_countStatistic0" type="com.kuafu.web.entity.WalletMemberExpireDatetimeStatistic7111d84fCount$Statistic0">
+        <result property="memberExpire" column="member_expire"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_member_expire_datetime_statistic_1fa6b701_countStatistic0" type="com.kuafu.web.entity.WalletMemberExpireDatetimeStatistic1fa6b701Count$Statistic0">
+        <result property="memberExpire" column="member_expire"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="wallet_member_expire_datetime_statistic_ea193847_countStatistic0" type="com.kuafu.web.entity.WalletMemberExpireDatetimeStatisticEa193847Count$Statistic0">
+        <result property="memberExpire" column="member_expire"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="wallet_statistic_972c1e1f_count" resultMap="wallet_statistic_972c1e1f_countStatistic0">
+        select
+                w.user_info_user_info_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.user_info_user_info_id_1
+    </select>
+
+
+    <select id="wallet_statistic_5f0bb06d_count" resultMap="wallet_statistic_5f0bb06d_countStatistic0">
+        select
+                w.user_info_user_info_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.user_info_user_info_id_1
+    </select>
+
+
+    <select id="wallet_statistic_43ce330b_count" resultMap="wallet_statistic_43ce330b_countStatistic0">
+        select
+                w.user_info_user_info_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.user_info_user_info_id_1
+    </select>
+
+
+    <select id="wallet_statistic_b6576e46_count" resultMap="wallet_statistic_b6576e46_countStatistic0">
+        select
+                w.member_type_enum_member_type_enum_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_type_enum_member_type_enum_id_1
+    </select>
+
+
+    <select id="wallet_statistic_cedabba8_count" resultMap="wallet_statistic_cedabba8_countStatistic0">
+        select
+                w.member_type_enum_member_type_enum_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_type_enum_member_type_enum_id_1
+    </select>
+
+
+    <select id="wallet_statistic_5c2132b0_count" resultMap="wallet_statistic_5c2132b0_countStatistic0">
+        select
+                w.member_type_enum_member_type_enum_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_type_enum_member_type_enum_id_1
+    </select>
+
+
+    <select id="wallet_member_type_enum_member_type_enum_id_1_status_statistic_174d5462_count" resultMap="wallet_member_type_enum_member_type_enum_id_1_status_statistic_174d5462_countStatistic0">
+        select
+                w.member_type_enum_member_type_enum_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_type_enum_member_type_enum_id_1
+    </select>
+
+
+    <select id="wallet_member_type_enum_member_type_enum_id_1_status_statistic_fb152bad_count" resultMap="wallet_member_type_enum_member_type_enum_id_1_status_statistic_fb152bad_countStatistic0">
+        select
+                w.member_type_enum_member_type_enum_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_type_enum_member_type_enum_id_1
+    </select>
+
+
+    <select id="wallet_member_type_enum_member_type_enum_id_1_status_statistic_0f98b43f_count" resultMap="wallet_member_type_enum_member_type_enum_id_1_status_statistic_0f98b43f_countStatistic0">
+        select
+                w.member_type_enum_member_type_enum_id_1  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_type_enum_member_type_enum_id_1
+    </select>
+
+
+    <select id="wallet_member_expire_datetime_statistic_7111d84f_count" resultMap="wallet_member_expire_datetime_statistic_7111d84f_countStatistic0">
+        select
+                w.member_expire  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_expire
+    </select>
+
+
+    <select id="wallet_member_expire_datetime_statistic_1fa6b701_count" resultMap="wallet_member_expire_datetime_statistic_1fa6b701_countStatistic0">
+        select
+                w.member_expire  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_expire
+    </select>
+
+
+    <select id="wallet_member_expire_datetime_statistic_ea193847_count" resultMap="wallet_member_expire_datetime_statistic_ea193847_countStatistic0">
+        select
+                w.member_expire  
+                ,  count(w.wallet_id)
+ as result_kf
+        FROM wallet w
+
+        ${ew.customSqlSegment}
+        group by 
+            w.member_expire
+    </select>
+
+
+
+</mapper>

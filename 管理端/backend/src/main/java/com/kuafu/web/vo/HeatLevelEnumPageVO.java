@@ -1,0 +1,32 @@
+package com.kuafu.web.vo;
+
+import java.util.Date;
+
+import com.kuafu.common.domin.PageRequest;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+/**
+ * <p>热力等级-分页列表-响应参数</p>
+ *
+ * @author kuafuai
+ * @description
+ * @date 2026/05/26 11:35
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+public class HeatLevelEnumPageVO extends PageRequest {
+
+    @JsonProperty(value = "heatLevelEnumId")
+    private Integer heatLevelEnumId;
+    @JsonProperty(value = "levelName")
+    private String levelName;
+    @JsonProperty(value = "color")
+    private String color;
+
+}

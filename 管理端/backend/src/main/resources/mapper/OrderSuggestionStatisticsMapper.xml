@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.OrderSuggestionStatisticsMapper">
+
+    <resultMap id="order_suggestion_statistic_b2e54e19_countStatistic0" type="com.kuafu.web.entity.OrderSuggestionStatisticB2e54e19Count$Statistic0">
+        <result property="heatLevelEnumHeatLevelEnumId1" column="heat_level_enum_heat_level_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="order_suggestion_statistic_025d1cf0_countStatistic0" type="com.kuafu.web.entity.OrderSuggestionStatistic025d1cf0Count$Statistic0">
+        <result property="heatLevelEnumHeatLevelEnumId1" column="heat_level_enum_heat_level_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="order_suggestion_statistic_b0be95c4_countStatistic0" type="com.kuafu.web.entity.OrderSuggestionStatisticB0be95c4Count$Statistic0">
+        <result property="heatLevelEnumHeatLevelEnumId1" column="heat_level_enum_heat_level_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_fa3c8c86_countStatistic0" type="com.kuafu.web.entity.OrderSuggestionHeatLevelEnumHeatLevelEnumId1StatusStatisticFa3c8c86Count$Statistic0">
+        <result property="heatLevelEnumHeatLevelEnumId1" column="heat_level_enum_heat_level_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_f66eba9a_countStatistic0" type="com.kuafu.web.entity.OrderSuggestionHeatLevelEnumHeatLevelEnumId1StatusStatisticF66eba9aCount$Statistic0">
+        <result property="heatLevelEnumHeatLevelEnumId1" column="heat_level_enum_heat_level_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_e974660b_countStatistic0" type="com.kuafu.web.entity.OrderSuggestionHeatLevelEnumHeatLevelEnumId1StatusStatisticE974660bCount$Statistic0">
+        <result property="heatLevelEnumHeatLevelEnumId1" column="heat_level_enum_heat_level_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="order_suggestion_statistic_b2e54e19_count" resultMap="order_suggestion_statistic_b2e54e19_countStatistic0">
+        select
+                os.heat_level_enum_heat_level_enum_id_1  
+                ,  count(os.order_suggestion_id)
+ as result_kf
+        FROM order_suggestion os
+
+        ${ew.customSqlSegment}
+        group by 
+            os.heat_level_enum_heat_level_enum_id_1
+    </select>
+
+
+    <select id="order_suggestion_statistic_025d1cf0_count" resultMap="order_suggestion_statistic_025d1cf0_countStatistic0">
+        select
+                os.heat_level_enum_heat_level_enum_id_1  
+                ,  count(os.order_suggestion_id)
+ as result_kf
+        FROM order_suggestion os
+
+        ${ew.customSqlSegment}
+        group by 
+            os.heat_level_enum_heat_level_enum_id_1
+    </select>
+
+
+    <select id="order_suggestion_statistic_b0be95c4_count" resultMap="order_suggestion_statistic_b0be95c4_countStatistic0">
+        select
+                os.heat_level_enum_heat_level_enum_id_1  
+                ,  count(os.order_suggestion_id)
+ as result_kf
+        FROM order_suggestion os
+
+        ${ew.customSqlSegment}
+        group by 
+            os.heat_level_enum_heat_level_enum_id_1
+    </select>
+
+
+    <select id="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_fa3c8c86_count" resultMap="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_fa3c8c86_countStatistic0">
+        select
+                os.heat_level_enum_heat_level_enum_id_1  
+                ,  count(os.order_suggestion_id)
+ as result_kf
+        FROM order_suggestion os
+
+        ${ew.customSqlSegment}
+        group by 
+            os.heat_level_enum_heat_level_enum_id_1
+    </select>
+
+
+    <select id="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_f66eba9a_count" resultMap="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_f66eba9a_countStatistic0">
+        select
+                os.heat_level_enum_heat_level_enum_id_1  
+                ,  count(os.order_suggestion_id)
+ as result_kf
+        FROM order_suggestion os
+
+        ${ew.customSqlSegment}
+        group by 
+            os.heat_level_enum_heat_level_enum_id_1
+    </select>
+
+
+    <select id="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_e974660b_count" resultMap="order_suggestion_heat_level_enum_heat_level_enum_id_1_status_statistic_e974660b_countStatistic0">
+        select
+                os.heat_level_enum_heat_level_enum_id_1  
+                ,  count(os.order_suggestion_id)
+ as result_kf
+        FROM order_suggestion os
+
+        ${ew.customSqlSegment}
+        group by 
+            os.heat_level_enum_heat_level_enum_id_1
+    </select>
+
+
+
+</mapper>

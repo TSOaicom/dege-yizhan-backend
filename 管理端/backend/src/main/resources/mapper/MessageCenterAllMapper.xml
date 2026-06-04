@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.MessageCenterAllMapper">
+
+
+        <select id="selectList" resultType="com.kuafu.web.entity.MessageCenterAll">
+            select
+            mc.create_time   ,
+            mc.type_enum_message_type_enum_id_1   ,
+            mc.is_read   ,
+            mc.message_center_id   ,
+            mc.title   ,
+            mc.content   ,
+            mte.type_name   
+            FROM message_center mc
+                left join message_type_enum mte on mc.type_enum_message_type_enum_id_1 = mte.message_type_enum_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectPage" resultType="com.kuafu.web.entity.MessageCenterAll">
+            select
+            mc.create_time  ,
+            mc.type_enum_message_type_enum_id_1  ,
+            mc.is_read  ,
+            mc.message_center_id  ,
+            mc.title  ,
+            mc.content  ,
+            mte.type_name  
+            FROM message_center mc
+                left join message_type_enum mte on mc.type_enum_message_type_enum_id_1 = mte.message_type_enum_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectById" resultType="com.kuafu.web.entity.MessageCenterAll">
+            select
+            mc.create_time  ,
+            mc.type_enum_message_type_enum_id_1  ,
+            mc.is_read  ,
+            mc.message_center_id  ,
+            mc.title  ,
+            mc.content  ,
+            mte.type_name  
+            FROM message_center mc
+                left join message_type_enum mte on mc.type_enum_message_type_enum_id_1 = mte.message_type_enum_id
+            where mc.message_center_id = #{id}
+        </select>
+
+
+</mapper>

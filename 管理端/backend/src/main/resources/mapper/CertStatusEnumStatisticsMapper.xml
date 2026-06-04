@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.CertStatusEnumStatisticsMapper">
+
+    <resultMap id="cert_status_enum_cert_status_enum_id_status_statistic_cd255f5d_countStatistic0" type="com.kuafu.web.entity.CertStatusEnumCertStatusEnumIdStatusStatisticCd255f5dCount$Statistic0">
+        <result property="certStatusEnumId" column="cert_status_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="cert_status_enum_cert_status_enum_id_status_statistic_e6f07197_countStatistic0" type="com.kuafu.web.entity.CertStatusEnumCertStatusEnumIdStatusStatisticE6f07197Count$Statistic0">
+        <result property="certStatusEnumId" column="cert_status_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="cert_status_enum_cert_status_enum_id_status_statistic_12344ce3_countStatistic0" type="com.kuafu.web.entity.CertStatusEnumCertStatusEnumIdStatusStatistic12344ce3Count$Statistic0">
+        <result property="certStatusEnumId" column="cert_status_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="cert_status_enum_status_status_statistic_c41cd054_countStatistic0" type="com.kuafu.web.entity.CertStatusEnumStatusStatusStatisticC41cd054Count$Statistic0">
+        <result property="status" column="status"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="cert_status_enum_status_status_statistic_9cd65863_countStatistic0" type="com.kuafu.web.entity.CertStatusEnumStatusStatusStatistic9cd65863Count$Statistic0">
+        <result property="status" column="status"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="cert_status_enum_status_status_statistic_821aa606_countStatistic0" type="com.kuafu.web.entity.CertStatusEnumStatusStatusStatistic821aa606Count$Statistic0">
+        <result property="status" column="status"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="cert_status_enum_cert_status_enum_id_status_statistic_cd255f5d_count" resultMap="cert_status_enum_cert_status_enum_id_status_statistic_cd255f5d_countStatistic0">
+        select
+                cse.cert_status_enum_id  
+                ,  count(cse.cert_status_enum_id)
+ as result_kf
+        FROM cert_status_enum cse
+
+        ${ew.customSqlSegment}
+        group by 
+            cse.cert_status_enum_id
+    </select>
+
+
+    <select id="cert_status_enum_cert_status_enum_id_status_statistic_e6f07197_count" resultMap="cert_status_enum_cert_status_enum_id_status_statistic_e6f07197_countStatistic0">
+        select
+                cse.cert_status_enum_id  
+                ,  count(cse.cert_status_enum_id)
+ as result_kf
+        FROM cert_status_enum cse
+
+        ${ew.customSqlSegment}
+        group by 
+            cse.cert_status_enum_id
+    </select>
+
+
+    <select id="cert_status_enum_cert_status_enum_id_status_statistic_12344ce3_count" resultMap="cert_status_enum_cert_status_enum_id_status_statistic_12344ce3_countStatistic0">
+        select
+                cse.cert_status_enum_id  
+                ,  count(cse.cert_status_enum_id)
+ as result_kf
+        FROM cert_status_enum cse
+
+        ${ew.customSqlSegment}
+        group by 
+            cse.cert_status_enum_id
+    </select>
+
+
+    <select id="cert_status_enum_status_status_statistic_c41cd054_count" resultMap="cert_status_enum_status_status_statistic_c41cd054_countStatistic0">
+        select
+                cse.status  
+                ,  count(cse.cert_status_enum_id)
+ as result_kf
+        FROM cert_status_enum cse
+
+        ${ew.customSqlSegment}
+        group by 
+            cse.status
+    </select>
+
+
+    <select id="cert_status_enum_status_status_statistic_9cd65863_count" resultMap="cert_status_enum_status_status_statistic_9cd65863_countStatistic0">
+        select
+                cse.status  
+                ,  count(cse.cert_status_enum_id)
+ as result_kf
+        FROM cert_status_enum cse
+
+        ${ew.customSqlSegment}
+        group by 
+            cse.status
+    </select>
+
+
+    <select id="cert_status_enum_status_status_statistic_821aa606_count" resultMap="cert_status_enum_status_status_statistic_821aa606_countStatistic0">
+        select
+                cse.status  
+                ,  count(cse.cert_status_enum_id)
+ as result_kf
+        FROM cert_status_enum cse
+
+        ${ew.customSqlSegment}
+        group by 
+            cse.status
+    </select>
+
+
+
+</mapper>

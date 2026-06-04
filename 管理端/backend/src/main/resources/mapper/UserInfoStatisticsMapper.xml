@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.UserInfoStatisticsMapper">
+
+    <resultMap id="user_info_statistic_93e31c52_countStatistic0" type="com.kuafu.web.entity.UserInfoStatistic93e31c52Count$Statistic0">
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_statistic_b65ed9bf_countStatistic0" type="com.kuafu.web.entity.UserInfoStatisticB65ed9bfCount$Statistic0">
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_statistic_30868a86_countStatistic0" type="com.kuafu.web.entity.UserInfoStatistic30868a86Count$Statistic0">
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_statistic_268d8230_countStatistic0" type="com.kuafu.web.entity.UserInfoStatistic268d8230Count$Statistic0">
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_statistic_e7862c5d_countStatistic0" type="com.kuafu.web.entity.UserInfoStatisticE7862c5dCount$Statistic0">
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_statistic_152a46d0_countStatistic0" type="com.kuafu.web.entity.UserInfoStatistic152a46d0Count$Statistic0">
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_car_type_enum_car_type_enum_id_1_status_statistic_f01fb1ae_countStatistic0" type="com.kuafu.web.entity.UserInfoCarTypeEnumCarTypeEnumId1StatusStatisticF01fb1aeCount$Statistic0">
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_car_type_enum_car_type_enum_id_1_status_statistic_34e2f73b_countStatistic0" type="com.kuafu.web.entity.UserInfoCarTypeEnumCarTypeEnumId1StatusStatistic34e2f73bCount$Statistic0">
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_car_type_enum_car_type_enum_id_1_status_statistic_ffe967b0_countStatistic0" type="com.kuafu.web.entity.UserInfoCarTypeEnumCarTypeEnumId1StatusStatisticFfe967b0Count$Statistic0">
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_ecdf3c00_countStatistic0" type="com.kuafu.web.entity.UserInfoCertStatusEnumCertStatusEnumId1StatusStatisticEcdf3c00Count$Statistic0">
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_6afbda8f_countStatistic0" type="com.kuafu.web.entity.UserInfoCertStatusEnumCertStatusEnumId1StatusStatistic6afbda8fCount$Statistic0">
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_79fd138f_countStatistic0" type="com.kuafu.web.entity.UserInfoCertStatusEnumCertStatusEnumId1StatusStatistic79fd138fCount$Statistic0">
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="user_info_statistic_93e31c52_count" resultMap="user_info_statistic_93e31c52_countStatistic0">
+        select
+                ui.car_type_enum_car_type_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.car_type_enum_car_type_enum_id_1
+    </select>
+
+
+    <select id="user_info_statistic_b65ed9bf_count" resultMap="user_info_statistic_b65ed9bf_countStatistic0">
+        select
+                ui.car_type_enum_car_type_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.car_type_enum_car_type_enum_id_1
+    </select>
+
+
+    <select id="user_info_statistic_30868a86_count" resultMap="user_info_statistic_30868a86_countStatistic0">
+        select
+                ui.car_type_enum_car_type_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.car_type_enum_car_type_enum_id_1
+    </select>
+
+
+    <select id="user_info_statistic_268d8230_count" resultMap="user_info_statistic_268d8230_countStatistic0">
+        select
+                ui.cert_status_enum_cert_status_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.cert_status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_info_statistic_e7862c5d_count" resultMap="user_info_statistic_e7862c5d_countStatistic0">
+        select
+                ui.cert_status_enum_cert_status_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.cert_status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_info_statistic_152a46d0_count" resultMap="user_info_statistic_152a46d0_countStatistic0">
+        select
+                ui.cert_status_enum_cert_status_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.cert_status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_info_car_type_enum_car_type_enum_id_1_status_statistic_f01fb1ae_count" resultMap="user_info_car_type_enum_car_type_enum_id_1_status_statistic_f01fb1ae_countStatistic0">
+        select
+                ui.car_type_enum_car_type_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.car_type_enum_car_type_enum_id_1
+    </select>
+
+
+    <select id="user_info_car_type_enum_car_type_enum_id_1_status_statistic_34e2f73b_count" resultMap="user_info_car_type_enum_car_type_enum_id_1_status_statistic_34e2f73b_countStatistic0">
+        select
+                ui.car_type_enum_car_type_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.car_type_enum_car_type_enum_id_1
+    </select>
+
+
+    <select id="user_info_car_type_enum_car_type_enum_id_1_status_statistic_ffe967b0_count" resultMap="user_info_car_type_enum_car_type_enum_id_1_status_statistic_ffe967b0_countStatistic0">
+        select
+                ui.car_type_enum_car_type_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.car_type_enum_car_type_enum_id_1
+    </select>
+
+
+    <select id="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_ecdf3c00_count" resultMap="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_ecdf3c00_countStatistic0">
+        select
+                ui.cert_status_enum_cert_status_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.cert_status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_6afbda8f_count" resultMap="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_6afbda8f_countStatistic0">
+        select
+                ui.cert_status_enum_cert_status_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.cert_status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_79fd138f_count" resultMap="user_info_cert_status_enum_cert_status_enum_id_1_status_statistic_79fd138f_countStatistic0">
+        select
+                ui.cert_status_enum_cert_status_enum_id_1  
+                ,  count(ui.user_info_id)
+ as result_kf
+        FROM user_info ui
+
+        ${ew.customSqlSegment}
+        group by 
+            ui.cert_status_enum_cert_status_enum_id_1
+    </select>
+
+
+
+</mapper>

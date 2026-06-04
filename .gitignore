@@ -1,0 +1,34 @@
+# Frontend (deployed separately to Cloudflare Pages)
+应用端/frontend/node_modules/
+应用端/frontend/dist/
+管理端/frontend/node_modules/
+管理端/frontend/dist/
+
+# Java build artifacts
+**/target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Local SQLite databases
+*.db
+*.sqlite
+
+# Environment files with secrets
+*.env.local

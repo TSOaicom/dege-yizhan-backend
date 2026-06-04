@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.UserCertificationStatisticsMapper">
+
+    <resultMap id="user_certification_statistic_7c28f5da_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatistic7c28f5daCount$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_certification_statistic_a5058d87_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatisticA5058d87Count$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_certification_statistic_c2590f13_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatisticC2590f13Count$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_certification_statistic_27b11a15_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatistic27b11a15Count$Statistic0">
+        <result property="statusEnumCertStatusEnumId1" column="status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_certification_statistic_589059e4_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatistic589059e4Count$Statistic0">
+        <result property="statusEnumCertStatusEnumId1" column="status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_certification_statistic_40f91fb8_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatistic40f91fb8Count$Statistic0">
+        <result property="statusEnumCertStatusEnumId1" column="status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_certification_status_enum_cert_status_enum_id_1_status_statistic_45c03617_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatusEnumCertStatusEnumId1StatusStatistic45c03617Count$Statistic0">
+        <result property="statusEnumCertStatusEnumId1" column="status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_certification_status_enum_cert_status_enum_id_1_status_statistic_f48e1c34_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatusEnumCertStatusEnumId1StatusStatisticF48e1c34Count$Statistic0">
+        <result property="statusEnumCertStatusEnumId1" column="status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="user_certification_status_enum_cert_status_enum_id_1_status_statistic_83318247_countStatistic0" type="com.kuafu.web.entity.UserCertificationStatusEnumCertStatusEnumId1StatusStatistic83318247Count$Statistic0">
+        <result property="statusEnumCertStatusEnumId1" column="status_enum_cert_status_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="user_certification_statistic_7c28f5da_count" resultMap="user_certification_statistic_7c28f5da_countStatistic0">
+        select
+                uc.user_info_user_info_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.user_info_user_info_id_1
+    </select>
+
+
+    <select id="user_certification_statistic_a5058d87_count" resultMap="user_certification_statistic_a5058d87_countStatistic0">
+        select
+                uc.user_info_user_info_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.user_info_user_info_id_1
+    </select>
+
+
+    <select id="user_certification_statistic_c2590f13_count" resultMap="user_certification_statistic_c2590f13_countStatistic0">
+        select
+                uc.user_info_user_info_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.user_info_user_info_id_1
+    </select>
+
+
+    <select id="user_certification_statistic_27b11a15_count" resultMap="user_certification_statistic_27b11a15_countStatistic0">
+        select
+                uc.status_enum_cert_status_enum_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_certification_statistic_589059e4_count" resultMap="user_certification_statistic_589059e4_countStatistic0">
+        select
+                uc.status_enum_cert_status_enum_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_certification_statistic_40f91fb8_count" resultMap="user_certification_statistic_40f91fb8_countStatistic0">
+        select
+                uc.status_enum_cert_status_enum_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_certification_status_enum_cert_status_enum_id_1_status_statistic_45c03617_count" resultMap="user_certification_status_enum_cert_status_enum_id_1_status_statistic_45c03617_countStatistic0">
+        select
+                uc.status_enum_cert_status_enum_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_certification_status_enum_cert_status_enum_id_1_status_statistic_f48e1c34_count" resultMap="user_certification_status_enum_cert_status_enum_id_1_status_statistic_f48e1c34_countStatistic0">
+        select
+                uc.status_enum_cert_status_enum_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.status_enum_cert_status_enum_id_1
+    </select>
+
+
+    <select id="user_certification_status_enum_cert_status_enum_id_1_status_statistic_83318247_count" resultMap="user_certification_status_enum_cert_status_enum_id_1_status_statistic_83318247_countStatistic0">
+        select
+                uc.status_enum_cert_status_enum_id_1  
+                ,  count(uc.user_certification_id)
+ as result_kf
+        FROM user_certification uc
+
+        ${ew.customSqlSegment}
+        group by 
+            uc.status_enum_cert_status_enum_id_1
+    </select>
+
+
+
+</mapper>

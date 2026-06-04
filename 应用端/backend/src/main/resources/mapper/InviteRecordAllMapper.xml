@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.InviteRecordAllMapper">
+    <sql id="invite_record_list_sql">
+        select
+        ir.user_info_user_info_id_1   ,
+        ui.car_plate   ,
+        ui.cert_status_enum_cert_status_enum_id_1   ,
+        ui.city   ,
+        ir.invitee_phone   ,
+        ui.real_name   ,
+        ui.password   ,
+        ir.invite_record_id   ,
+        ui.phone_number   ,
+        ui.continue_active_days   ,
+        ir.invite_time   ,
+        ui.car_type_enum_car_type_enum_id_1   ,
+        ui.active_days   
+
+
+        FROM invite_record ir
+        left join user_info ui on ir.user_info_user_info_id_1 = ui.user_info_id
+
+        </sql>
+
+        <resultMap id="selectListNewMap" type="com.kuafu.web.entity.InviteRecordAll">
+
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+
+        <result property="carPlate" column="car_plate"/>
+
+        <result property="certStatusEnumCertStatusEnumId1" column="cert_status_enum_cert_status_enum_id_1"/>
+
+        <result property="city" column="city"/>
+
+        <result property="inviteePhone" column="invitee_phone"/>
+
+        <result property="realName" column="real_name"/>
+
+        <result property="password" column="password"/>
+
+        <result property="inviteRecordId" column="invite_record_id"/>
+
+        <result property="phoneNumber" column="phone_number"/>
+
+        <result property="continueActiveDays" column="continue_active_days"/>
+
+        <result property="inviteTime" column="invite_time"/>
+
+        <result property="carTypeEnumCarTypeEnumId1" column="car_type_enum_car_type_enum_id_1"/>
+
+        <result property="activeDays" column="active_days"/>
+
+
+
+
+        </resultMap>
+
+<select id="selectListNew"  resultMap="selectListNewMap">
+select
+ir.user_info_user_info_id_1   ,
+ui.car_plate   ,
+ui.cert_status_enum_cert_status_enum_id_1   ,
+ui.city   ,
+ir.invitee_phone   ,
+ui.real_name   ,
+ui.password   ,
+ir.invite_record_id   ,
+ui.phone_number   ,
+ui.continue_active_days   ,
+ir.invite_time   ,
+ui.car_type_enum_car_type_enum_id_1   ,
+ui.active_days   
+
+
+
+        FROM invite_record ir
+        left join
+
+        user_info
+
+        ui on ir.user_info_user_info_id_1 = ui.user_info_id
+
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectList" resultType="com.kuafu.web.entity.InviteRecordAll">
+select
+ir.user_info_user_info_id_1   ,
+ui.car_plate   ,
+ui.cert_status_enum_cert_status_enum_id_1   ,
+ui.city   ,
+ir.invitee_phone   ,
+ui.real_name   ,
+ui.password   ,
+ir.invite_record_id   ,
+ui.phone_number   ,
+ui.continue_active_days   ,
+ir.invite_time   ,
+ui.car_type_enum_car_type_enum_id_1   ,
+ui.active_days   
+
+
+        FROM invite_record ir
+        left join user_info ui on ir.user_info_user_info_id_1 = ui.user_info_id
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectPage" resultType="com.kuafu.web.entity.InviteRecordAll">
+select
+ir.user_info_user_info_id_1  ,
+ui.car_plate  ,
+ui.cert_status_enum_cert_status_enum_id_1  ,
+ui.city  ,
+ir.invitee_phone  ,
+ui.real_name  ,
+ui.password  ,
+ir.invite_record_id  ,
+ui.phone_number  ,
+ui.continue_active_days  ,
+ir.invite_time  ,
+ui.car_type_enum_car_type_enum_id_1  ,
+ui.active_days  
+
+
+
+        FROM invite_record ir
+        left join user_info ui on ir.user_info_user_info_id_1 = ui.user_info_id
+
+
+
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectById" resultType="com.kuafu.web.entity.InviteRecordAll">
+select
+ir.user_info_user_info_id_1  ,
+ui.car_plate  ,
+ui.cert_status_enum_cert_status_enum_id_1  ,
+ui.city  ,
+ir.invitee_phone  ,
+ui.real_name  ,
+ui.password  ,
+ir.invite_record_id  ,
+ui.phone_number  ,
+ui.continue_active_days  ,
+ir.invite_time  ,
+ui.car_type_enum_car_type_enum_id_1  ,
+ui.active_days  
+
+
+        FROM invite_record ir
+        left join user_info ui on ir.user_info_user_info_id_1 = ui.user_info_id
+
+
+
+        where ir.invite_record_id = #{id}
+        </select>
+
+<select id="selectCount" resultType="java.lang.Long">
+select
+count(*)
+
+
+
+FROM invite_record ir
+left join user_info ui on ir.user_info_user_info_id_1 = ui.user_info_id
+
+
+
+${ew.customSqlSegment}
+
+
+        </select>
+
+        </mapper>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.MessageCenterStatisticsMapper">
+
+    <resultMap id="message_center_statistic_dfa049a3_countStatistic0" type="com.kuafu.web.entity.MessageCenterStatisticDfa049a3Count$Statistic0">
+        <result property="typeEnumMessageTypeEnumId1" column="type_enum_message_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_center_statistic_475f0b61_countStatistic0" type="com.kuafu.web.entity.MessageCenterStatistic475f0b61Count$Statistic0">
+        <result property="typeEnumMessageTypeEnumId1" column="type_enum_message_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_center_statistic_f0ffe4fe_countStatistic0" type="com.kuafu.web.entity.MessageCenterStatisticF0ffe4feCount$Statistic0">
+        <result property="typeEnumMessageTypeEnumId1" column="type_enum_message_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_center_type_enum_message_type_enum_id_1_status_statistic_1ec2c82e_countStatistic0" type="com.kuafu.web.entity.MessageCenterTypeEnumMessageTypeEnumId1StatusStatistic1ec2c82eCount$Statistic0">
+        <result property="typeEnumMessageTypeEnumId1" column="type_enum_message_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_center_type_enum_message_type_enum_id_1_status_statistic_0bf25d97_countStatistic0" type="com.kuafu.web.entity.MessageCenterTypeEnumMessageTypeEnumId1StatusStatistic0bf25d97Count$Statistic0">
+        <result property="typeEnumMessageTypeEnumId1" column="type_enum_message_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_center_type_enum_message_type_enum_id_1_status_statistic_dba671da_countStatistic0" type="com.kuafu.web.entity.MessageCenterTypeEnumMessageTypeEnumId1StatusStatisticDba671daCount$Statistic0">
+        <result property="typeEnumMessageTypeEnumId1" column="type_enum_message_type_enum_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_center_create_time_datetime_statistic_89be4e5d_countStatistic0" type="com.kuafu.web.entity.MessageCenterCreateTimeDatetimeStatistic89be4e5dCount$Statistic0">
+        <result property="createTime" column="create_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_center_create_time_datetime_statistic_4c1507ce_countStatistic0" type="com.kuafu.web.entity.MessageCenterCreateTimeDatetimeStatistic4c1507ceCount$Statistic0">
+        <result property="createTime" column="create_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_center_create_time_datetime_statistic_27bf0915_countStatistic0" type="com.kuafu.web.entity.MessageCenterCreateTimeDatetimeStatistic27bf0915Count$Statistic0">
+        <result property="createTime" column="create_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="message_center_statistic_dfa049a3_count" resultMap="message_center_statistic_dfa049a3_countStatistic0">
+        select
+                mc.type_enum_message_type_enum_id_1  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.type_enum_message_type_enum_id_1
+    </select>
+
+
+    <select id="message_center_statistic_475f0b61_count" resultMap="message_center_statistic_475f0b61_countStatistic0">
+        select
+                mc.type_enum_message_type_enum_id_1  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.type_enum_message_type_enum_id_1
+    </select>
+
+
+    <select id="message_center_statistic_f0ffe4fe_count" resultMap="message_center_statistic_f0ffe4fe_countStatistic0">
+        select
+                mc.type_enum_message_type_enum_id_1  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.type_enum_message_type_enum_id_1
+    </select>
+
+
+    <select id="message_center_type_enum_message_type_enum_id_1_status_statistic_1ec2c82e_count" resultMap="message_center_type_enum_message_type_enum_id_1_status_statistic_1ec2c82e_countStatistic0">
+        select
+                mc.type_enum_message_type_enum_id_1  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.type_enum_message_type_enum_id_1
+    </select>
+
+
+    <select id="message_center_type_enum_message_type_enum_id_1_status_statistic_0bf25d97_count" resultMap="message_center_type_enum_message_type_enum_id_1_status_statistic_0bf25d97_countStatistic0">
+        select
+                mc.type_enum_message_type_enum_id_1  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.type_enum_message_type_enum_id_1
+    </select>
+
+
+    <select id="message_center_type_enum_message_type_enum_id_1_status_statistic_dba671da_count" resultMap="message_center_type_enum_message_type_enum_id_1_status_statistic_dba671da_countStatistic0">
+        select
+                mc.type_enum_message_type_enum_id_1  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.type_enum_message_type_enum_id_1
+    </select>
+
+
+    <select id="message_center_create_time_datetime_statistic_89be4e5d_count" resultMap="message_center_create_time_datetime_statistic_89be4e5d_countStatistic0">
+        select
+                mc.create_time  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.create_time
+    </select>
+
+
+    <select id="message_center_create_time_datetime_statistic_4c1507ce_count" resultMap="message_center_create_time_datetime_statistic_4c1507ce_countStatistic0">
+        select
+                mc.create_time  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.create_time
+    </select>
+
+
+    <select id="message_center_create_time_datetime_statistic_27bf0915_count" resultMap="message_center_create_time_datetime_statistic_27bf0915_countStatistic0">
+        select
+                mc.create_time  
+                ,  count(mc.message_center_id)
+ as result_kf
+        FROM message_center mc
+
+        ${ew.customSqlSegment}
+        group by 
+            mc.create_time
+    </select>
+
+
+
+</mapper>

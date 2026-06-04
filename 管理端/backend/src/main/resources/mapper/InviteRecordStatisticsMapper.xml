@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.InviteRecordStatisticsMapper">
+
+    <resultMap id="invite_record_statistic_31bed8f4_countStatistic0" type="com.kuafu.web.entity.InviteRecordStatistic31bed8f4Count$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="invite_record_statistic_a629efa5_countStatistic0" type="com.kuafu.web.entity.InviteRecordStatisticA629efa5Count$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="invite_record_statistic_72eba71b_countStatistic0" type="com.kuafu.web.entity.InviteRecordStatistic72eba71bCount$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="invite_record_invite_time_datetime_statistic_9e15a676_countStatistic0" type="com.kuafu.web.entity.InviteRecordInviteTimeDatetimeStatistic9e15a676Count$Statistic0">
+        <result property="inviteTime" column="invite_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="invite_record_invite_time_datetime_statistic_31df2134_countStatistic0" type="com.kuafu.web.entity.InviteRecordInviteTimeDatetimeStatistic31df2134Count$Statistic0">
+        <result property="inviteTime" column="invite_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="invite_record_invite_time_datetime_statistic_8a084807_countStatistic0" type="com.kuafu.web.entity.InviteRecordInviteTimeDatetimeStatistic8a084807Count$Statistic0">
+        <result property="inviteTime" column="invite_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="invite_record_statistic_31bed8f4_count" resultMap="invite_record_statistic_31bed8f4_countStatistic0">
+        select
+                ir.user_info_user_info_id_1  
+                ,  count(ir.invite_record_id)
+ as result_kf
+        FROM invite_record ir
+
+        ${ew.customSqlSegment}
+        group by 
+            ir.user_info_user_info_id_1
+    </select>
+
+
+    <select id="invite_record_statistic_a629efa5_count" resultMap="invite_record_statistic_a629efa5_countStatistic0">
+        select
+                ir.user_info_user_info_id_1  
+                ,  count(ir.invite_record_id)
+ as result_kf
+        FROM invite_record ir
+
+        ${ew.customSqlSegment}
+        group by 
+            ir.user_info_user_info_id_1
+    </select>
+
+
+    <select id="invite_record_statistic_72eba71b_count" resultMap="invite_record_statistic_72eba71b_countStatistic0">
+        select
+                ir.user_info_user_info_id_1  
+                ,  count(ir.invite_record_id)
+ as result_kf
+        FROM invite_record ir
+
+        ${ew.customSqlSegment}
+        group by 
+            ir.user_info_user_info_id_1
+    </select>
+
+
+    <select id="invite_record_invite_time_datetime_statistic_9e15a676_count" resultMap="invite_record_invite_time_datetime_statistic_9e15a676_countStatistic0">
+        select
+                ir.invite_time  
+                ,  count(ir.invite_record_id)
+ as result_kf
+        FROM invite_record ir
+
+        ${ew.customSqlSegment}
+        group by 
+            ir.invite_time
+    </select>
+
+
+    <select id="invite_record_invite_time_datetime_statistic_31df2134_count" resultMap="invite_record_invite_time_datetime_statistic_31df2134_countStatistic0">
+        select
+                ir.invite_time  
+                ,  count(ir.invite_record_id)
+ as result_kf
+        FROM invite_record ir
+
+        ${ew.customSqlSegment}
+        group by 
+            ir.invite_time
+    </select>
+
+
+    <select id="invite_record_invite_time_datetime_statistic_8a084807_count" resultMap="invite_record_invite_time_datetime_statistic_8a084807_countStatistic0">
+        select
+                ir.invite_time  
+                ,  count(ir.invite_record_id)
+ as result_kf
+        FROM invite_record ir
+
+        ${ew.customSqlSegment}
+        group by 
+            ir.invite_time
+    </select>
+
+
+
+</mapper>

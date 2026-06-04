@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.OrderSuggestionAllMapper">
+
+
+        <select id="selectList" resultType="com.kuafu.web.entity.OrderSuggestionAll">
+            select
+            os.suggest_direction   ,
+            os.area_name   ,
+            os.distance   ,
+            hle.color   ,
+            os.heat_level_enum_heat_level_enum_id_1   ,
+            os.recommend_index   ,
+            os.order_suggestion_id   ,
+            hle.level_name   ,
+            os.order_count   
+            FROM order_suggestion os
+                left join heat_level_enum hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectPage" resultType="com.kuafu.web.entity.OrderSuggestionAll">
+            select
+            os.suggest_direction  ,
+            os.area_name  ,
+            os.distance  ,
+            hle.color  ,
+            os.heat_level_enum_heat_level_enum_id_1  ,
+            os.recommend_index  ,
+            os.order_suggestion_id  ,
+            hle.level_name  ,
+            os.order_count  
+            FROM order_suggestion os
+                left join heat_level_enum hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectById" resultType="com.kuafu.web.entity.OrderSuggestionAll">
+            select
+            os.suggest_direction  ,
+            os.area_name  ,
+            os.distance  ,
+            hle.color  ,
+            os.heat_level_enum_heat_level_enum_id_1  ,
+            os.recommend_index  ,
+            os.order_suggestion_id  ,
+            hle.level_name  ,
+            os.order_count  
+            FROM order_suggestion os
+                left join heat_level_enum hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+            where os.order_suggestion_id = #{id}
+        </select>
+
+
+</mapper>

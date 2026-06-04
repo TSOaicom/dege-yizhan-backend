@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.InviteRecordAllMapper">
+
+
+        <select id="selectList" resultType="com.kuafu.web.entity.InviteRecordAll">
+            select
+            ir.user_info_user_info_id_1   ,
+            ir.invite_time   ,
+            ir.invite_record_id   ,
+            ui.cert_status_enum_cert_status_enum_id_1   ,
+            ui.city   ,
+            ui.active_days   ,
+            ui.phone_number   ,
+            ui.avatar_resource_key   ,
+            ir.invitee_phone   ,
+            ui.car_type_enum_car_type_enum_id_1   ,
+            ui.real_name   ,
+            ui.continue_active_days   ,
+            ui.password   ,
+            ui.car_plate   
+            FROM invite_record ir
+                left join user_info ui on ir.user_info_user_info_id_1 = ui.user_info_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectPage" resultType="com.kuafu.web.entity.InviteRecordAll">
+            select
+            ir.user_info_user_info_id_1  ,
+            ir.invite_time  ,
+            ir.invite_record_id  ,
+            ui.cert_status_enum_cert_status_enum_id_1  ,
+            ui.city  ,
+            ui.active_days  ,
+            ui.phone_number  ,
+            ui.avatar_resource_key  ,
+            ir.invitee_phone  ,
+            ui.car_type_enum_car_type_enum_id_1  ,
+            ui.real_name  ,
+            ui.continue_active_days  ,
+            ui.password  ,
+            ui.car_plate  
+            FROM invite_record ir
+                left join user_info ui on ir.user_info_user_info_id_1 = ui.user_info_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectById" resultType="com.kuafu.web.entity.InviteRecordAll">
+            select
+            ir.user_info_user_info_id_1  ,
+            ir.invite_time  ,
+            ir.invite_record_id  ,
+            ui.cert_status_enum_cert_status_enum_id_1  ,
+            ui.city  ,
+            ui.active_days  ,
+            ui.phone_number  ,
+            ui.avatar_resource_key  ,
+            ir.invitee_phone  ,
+            ui.car_type_enum_car_type_enum_id_1  ,
+            ui.real_name  ,
+            ui.continue_active_days  ,
+            ui.password  ,
+            ui.car_plate  
+            FROM invite_record ir
+                left join user_info ui on ir.user_info_user_info_id_1 = ui.user_info_id
+            where ir.invite_record_id = #{id}
+        </select>
+
+
+</mapper>

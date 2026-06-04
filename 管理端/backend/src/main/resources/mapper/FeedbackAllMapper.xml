@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.FeedbackAllMapper">
+
+
+        <select id="selectList" resultType="com.kuafu.web.entity.FeedbackAll">
+            select
+            f.user_info_user_info_id_1   ,
+            f.create_time   ,
+            ui.cert_status_enum_cert_status_enum_id_1   ,
+            ui.city   ,
+            ui.active_days   ,
+            ui.phone_number   ,
+            f.feedback_id   ,
+            ui.avatar_resource_key   ,
+            ui.car_type_enum_car_type_enum_id_1   ,
+            f.content   ,
+            ui.real_name   ,
+            ui.continue_active_days   ,
+            ui.password   ,
+            ui.car_plate   
+            FROM feedback f
+                left join user_info ui on f.user_info_user_info_id_1 = ui.user_info_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectPage" resultType="com.kuafu.web.entity.FeedbackAll">
+            select
+            f.user_info_user_info_id_1  ,
+            f.create_time  ,
+            ui.cert_status_enum_cert_status_enum_id_1  ,
+            ui.city  ,
+            ui.active_days  ,
+            ui.phone_number  ,
+            f.feedback_id  ,
+            ui.avatar_resource_key  ,
+            ui.car_type_enum_car_type_enum_id_1  ,
+            f.content  ,
+            ui.real_name  ,
+            ui.continue_active_days  ,
+            ui.password  ,
+            ui.car_plate  
+            FROM feedback f
+                left join user_info ui on f.user_info_user_info_id_1 = ui.user_info_id
+            ${ew.customSqlSegment}
+        </select>
+
+        <select id="selectById" resultType="com.kuafu.web.entity.FeedbackAll">
+            select
+            f.user_info_user_info_id_1  ,
+            f.create_time  ,
+            ui.cert_status_enum_cert_status_enum_id_1  ,
+            ui.city  ,
+            ui.active_days  ,
+            ui.phone_number  ,
+            f.feedback_id  ,
+            ui.avatar_resource_key  ,
+            ui.car_type_enum_car_type_enum_id_1  ,
+            f.content  ,
+            ui.real_name  ,
+            ui.continue_active_days  ,
+            ui.password  ,
+            ui.car_plate  
+            FROM feedback f
+                left join user_info ui on f.user_info_user_info_id_1 = ui.user_info_id
+            where f.feedback_id = #{id}
+        </select>
+
+
+</mapper>

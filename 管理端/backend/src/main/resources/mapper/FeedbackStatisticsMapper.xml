@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.FeedbackStatisticsMapper">
+
+    <resultMap id="feedback_statistic_88d8c4e8_countStatistic0" type="com.kuafu.web.entity.FeedbackStatistic88d8c4e8Count$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="feedback_statistic_567cc485_countStatistic0" type="com.kuafu.web.entity.FeedbackStatistic567cc485Count$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="feedback_statistic_97294634_countStatistic0" type="com.kuafu.web.entity.FeedbackStatistic97294634Count$Statistic0">
+        <result property="userInfoUserInfoId1" column="user_info_user_info_id_1"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="feedback_create_time_datetime_statistic_a0fae0b9_countStatistic0" type="com.kuafu.web.entity.FeedbackCreateTimeDatetimeStatisticA0fae0b9Count$Statistic0">
+        <result property="createTime" column="create_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="feedback_create_time_datetime_statistic_747f6f44_countStatistic0" type="com.kuafu.web.entity.FeedbackCreateTimeDatetimeStatistic747f6f44Count$Statistic0">
+        <result property="createTime" column="create_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="feedback_create_time_datetime_statistic_f2b17184_countStatistic0" type="com.kuafu.web.entity.FeedbackCreateTimeDatetimeStatisticF2b17184Count$Statistic0">
+        <result property="createTime" column="create_time"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="feedback_statistic_88d8c4e8_count" resultMap="feedback_statistic_88d8c4e8_countStatistic0">
+        select
+                f.user_info_user_info_id_1  
+                ,  count(f.feedback_id)
+ as result_kf
+        FROM feedback f
+
+        ${ew.customSqlSegment}
+        group by 
+            f.user_info_user_info_id_1
+    </select>
+
+
+    <select id="feedback_statistic_567cc485_count" resultMap="feedback_statistic_567cc485_countStatistic0">
+        select
+                f.user_info_user_info_id_1  
+                ,  count(f.feedback_id)
+ as result_kf
+        FROM feedback f
+
+        ${ew.customSqlSegment}
+        group by 
+            f.user_info_user_info_id_1
+    </select>
+
+
+    <select id="feedback_statistic_97294634_count" resultMap="feedback_statistic_97294634_countStatistic0">
+        select
+                f.user_info_user_info_id_1  
+                ,  count(f.feedback_id)
+ as result_kf
+        FROM feedback f
+
+        ${ew.customSqlSegment}
+        group by 
+            f.user_info_user_info_id_1
+    </select>
+
+
+    <select id="feedback_create_time_datetime_statistic_a0fae0b9_count" resultMap="feedback_create_time_datetime_statistic_a0fae0b9_countStatistic0">
+        select
+                f.create_time  
+                ,  count(f.feedback_id)
+ as result_kf
+        FROM feedback f
+
+        ${ew.customSqlSegment}
+        group by 
+            f.create_time
+    </select>
+
+
+    <select id="feedback_create_time_datetime_statistic_747f6f44_count" resultMap="feedback_create_time_datetime_statistic_747f6f44_countStatistic0">
+        select
+                f.create_time  
+                ,  count(f.feedback_id)
+ as result_kf
+        FROM feedback f
+
+        ${ew.customSqlSegment}
+        group by 
+            f.create_time
+    </select>
+
+
+    <select id="feedback_create_time_datetime_statistic_f2b17184_count" resultMap="feedback_create_time_datetime_statistic_f2b17184_countStatistic0">
+        select
+                f.create_time  
+                ,  count(f.feedback_id)
+ as result_kf
+        FROM feedback f
+
+        ${ew.customSqlSegment}
+        group by 
+            f.create_time
+    </select>
+
+
+
+</mapper>

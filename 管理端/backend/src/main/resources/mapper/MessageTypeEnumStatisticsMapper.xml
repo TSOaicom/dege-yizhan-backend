@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.MessageTypeEnumStatisticsMapper">
+
+    <resultMap id="message_type_enum_message_type_enum_id_status_statistic_48318e25_countStatistic0" type="com.kuafu.web.entity.MessageTypeEnumMessageTypeEnumIdStatusStatistic48318e25Count$Statistic0">
+        <result property="messageTypeEnumId" column="message_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_type_enum_message_type_enum_id_status_statistic_0a19315b_countStatistic0" type="com.kuafu.web.entity.MessageTypeEnumMessageTypeEnumIdStatusStatistic0a19315bCount$Statistic0">
+        <result property="messageTypeEnumId" column="message_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="message_type_enum_message_type_enum_id_status_statistic_9669aff3_countStatistic0" type="com.kuafu.web.entity.MessageTypeEnumMessageTypeEnumIdStatusStatistic9669aff3Count$Statistic0">
+        <result property="messageTypeEnumId" column="message_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="message_type_enum_message_type_enum_id_status_statistic_48318e25_count" resultMap="message_type_enum_message_type_enum_id_status_statistic_48318e25_countStatistic0">
+        select
+                mte.message_type_enum_id  
+                ,  count(mte.message_type_enum_id)
+ as result_kf
+        FROM message_type_enum mte
+
+        ${ew.customSqlSegment}
+        group by 
+            mte.message_type_enum_id
+    </select>
+
+
+    <select id="message_type_enum_message_type_enum_id_status_statistic_0a19315b_count" resultMap="message_type_enum_message_type_enum_id_status_statistic_0a19315b_countStatistic0">
+        select
+                mte.message_type_enum_id  
+                ,  count(mte.message_type_enum_id)
+ as result_kf
+        FROM message_type_enum mte
+
+        ${ew.customSqlSegment}
+        group by 
+            mte.message_type_enum_id
+    </select>
+
+
+    <select id="message_type_enum_message_type_enum_id_status_statistic_9669aff3_count" resultMap="message_type_enum_message_type_enum_id_status_statistic_9669aff3_countStatistic0">
+        select
+                mte.message_type_enum_id  
+                ,  count(mte.message_type_enum_id)
+ as result_kf
+        FROM message_type_enum mte
+
+        ${ew.customSqlSegment}
+        group by 
+            mte.message_type_enum_id
+    </select>
+
+
+
+</mapper>

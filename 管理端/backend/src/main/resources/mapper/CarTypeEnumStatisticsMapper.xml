@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.CarTypeEnumStatisticsMapper">
+
+    <resultMap id="car_type_enum_car_type_enum_id_status_statistic_cff7ec90_countStatistic0" type="com.kuafu.web.entity.CarTypeEnumCarTypeEnumIdStatusStatisticCff7ec90Count$Statistic0">
+        <result property="carTypeEnumId" column="car_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="car_type_enum_car_type_enum_id_status_statistic_54e8df16_countStatistic0" type="com.kuafu.web.entity.CarTypeEnumCarTypeEnumIdStatusStatistic54e8df16Count$Statistic0">
+        <result property="carTypeEnumId" column="car_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+<resultMap id="car_type_enum_car_type_enum_id_status_statistic_2e7d2440_countStatistic0" type="com.kuafu.web.entity.CarTypeEnumCarTypeEnumIdStatusStatistic2e7d2440Count$Statistic0">
+        <result property="carTypeEnumId" column="car_type_enum_id"/>
+        <result property="result_kf" column="result_kf"/>
+    </resultMap>
+
+
+
+    <select id="car_type_enum_car_type_enum_id_status_statistic_cff7ec90_count" resultMap="car_type_enum_car_type_enum_id_status_statistic_cff7ec90_countStatistic0">
+        select
+                cte.car_type_enum_id  
+                ,  count(cte.car_type_enum_id)
+ as result_kf
+        FROM car_type_enum cte
+
+        ${ew.customSqlSegment}
+        group by 
+            cte.car_type_enum_id
+    </select>
+
+
+    <select id="car_type_enum_car_type_enum_id_status_statistic_54e8df16_count" resultMap="car_type_enum_car_type_enum_id_status_statistic_54e8df16_countStatistic0">
+        select
+                cte.car_type_enum_id  
+                ,  count(cte.car_type_enum_id)
+ as result_kf
+        FROM car_type_enum cte
+
+        ${ew.customSqlSegment}
+        group by 
+            cte.car_type_enum_id
+    </select>
+
+
+    <select id="car_type_enum_car_type_enum_id_status_statistic_2e7d2440_count" resultMap="car_type_enum_car_type_enum_id_status_statistic_2e7d2440_countStatistic0">
+        select
+                cte.car_type_enum_id  
+                ,  count(cte.car_type_enum_id)
+ as result_kf
+        FROM car_type_enum cte
+
+        ${ew.customSqlSegment}
+        group by 
+            cte.car_type_enum_id
+    </select>
+
+
+
+</mapper>

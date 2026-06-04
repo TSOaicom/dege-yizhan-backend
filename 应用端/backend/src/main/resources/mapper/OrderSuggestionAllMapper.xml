@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuafu.web.mapper.OrderSuggestionAllMapper">
+    <sql id="order_suggestion_list_sql">
+        select
+        os.area_name   ,
+        os.order_suggestion_id   ,
+        hle.level_name   ,
+        os.order_count   ,
+        os.distance   ,
+        hle.color   ,
+        os.heat_level_enum_heat_level_enum_id_1   ,
+        os.suggest_direction   ,
+        os.recommend_index   
+
+
+        FROM order_suggestion os
+        left join heat_level_enum hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+
+        </sql>
+
+        <resultMap id="selectListNewMap" type="com.kuafu.web.entity.OrderSuggestionAll">
+
+        <result property="areaName" column="area_name"/>
+
+        <result property="orderSuggestionId" column="order_suggestion_id"/>
+
+        <result property="levelName" column="level_name"/>
+
+        <result property="orderCount" column="order_count"/>
+
+        <result property="distance" column="distance"/>
+
+        <result property="color" column="color"/>
+
+        <result property="heatLevelEnumHeatLevelEnumId1" column="heat_level_enum_heat_level_enum_id_1"/>
+
+        <result property="suggestDirection" column="suggest_direction"/>
+
+        <result property="recommendIndex" column="recommend_index"/>
+
+
+
+
+        </resultMap>
+
+<select id="selectListNew"  resultMap="selectListNewMap">
+select
+os.area_name   ,
+os.order_suggestion_id   ,
+hle.level_name   ,
+os.order_count   ,
+os.distance   ,
+hle.color   ,
+os.heat_level_enum_heat_level_enum_id_1   ,
+os.suggest_direction   ,
+os.recommend_index   
+
+
+
+        FROM order_suggestion os
+        left join
+
+        heat_level_enum
+
+        hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectList" resultType="com.kuafu.web.entity.OrderSuggestionAll">
+select
+os.area_name   ,
+os.order_suggestion_id   ,
+hle.level_name   ,
+os.order_count   ,
+os.distance   ,
+hle.color   ,
+os.heat_level_enum_heat_level_enum_id_1   ,
+os.suggest_direction   ,
+os.recommend_index   
+
+
+        FROM order_suggestion os
+        left join heat_level_enum hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectPage" resultType="com.kuafu.web.entity.OrderSuggestionAll">
+select
+os.area_name  ,
+os.order_suggestion_id  ,
+hle.level_name  ,
+os.order_count  ,
+os.distance  ,
+hle.color  ,
+os.heat_level_enum_heat_level_enum_id_1  ,
+os.suggest_direction  ,
+os.recommend_index  
+
+
+
+        FROM order_suggestion os
+        left join heat_level_enum hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+
+
+
+
+
+${ew.customSqlSegment}
+        </select>
+
+<select id="selectById" resultType="com.kuafu.web.entity.OrderSuggestionAll">
+select
+os.area_name  ,
+os.order_suggestion_id  ,
+hle.level_name  ,
+os.order_count  ,
+os.distance  ,
+hle.color  ,
+os.heat_level_enum_heat_level_enum_id_1  ,
+os.suggest_direction  ,
+os.recommend_index  
+
+
+        FROM order_suggestion os
+        left join heat_level_enum hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+
+
+
+        where os.order_suggestion_id = #{id}
+        </select>
+
+<select id="selectCount" resultType="java.lang.Long">
+select
+count(*)
+
+
+
+FROM order_suggestion os
+left join heat_level_enum hle on os.heat_level_enum_heat_level_enum_id_1 = hle.heat_level_enum_id
+
+
+
+${ew.customSqlSegment}
+
+
+        </select>
+
+        </mapper>
