@@ -1,7 +1,7 @@
 FROM eclipse-temurin:8-jdk-focal AS build
 WORKDIR /app
 COPY . .
-RUN echo "build-20260604v4" && chmod +x mvnw && ./mvnw clean package -P mysql -DskipTests
+RUN echo "build-20260604v5-mysql-fix" && chmod +x mvnw && ./mvnw clean package -P mysql -DskipTests
 
 FROM eclipse-temurin:8-jre-focal
 WORKDIR /app

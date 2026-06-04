@@ -4,6 +4,9 @@ spring:
     enabled: true
     locations: classpath:db/mysql
     baselineOnMigrate: true
+    repair-on-migrate: true
+    clean-on-validation-error: true
+    clean-disabled: false
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
