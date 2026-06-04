@@ -90,7 +90,7 @@ CREATE TABLE delayed_tasks
     id           BIGINT PRIMARY KEY AUTO_INCREMENT,
     task_type    VARCHAR(216) NOT NULL,
     task_data    VARCHAR(1024)         NOT NULL,
-    status       VARCHAR(64)  NOT NULL DEFAULT 0 COMMENT ,
+    status       VARCHAR(64)  NOT NULL DEFAULT 0 COMMENT '状态',
     execute_time DATETIME     NOT NULL,
     create_time  DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     update_time  DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
