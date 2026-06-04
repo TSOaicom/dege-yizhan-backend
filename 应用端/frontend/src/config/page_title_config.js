@@ -1,0 +1,1 @@
+export default		{"pet_news_detail":"资讯详情","pet_list":"宠物列表","adoption_application_list":"领养申请管理","adoption_application_add":"领养申请","lost_pet_add":"发布寻宠启事","user_profile":"个人信息","login":"登录","home":"首页","user_favorite_list":"收藏列表","pet_detail":"宠物详情","pet_news_list":"资讯列表","lost_pet_detail":"寻宠详情","lost_pet_list":"寻宠列表","register":"注册"}

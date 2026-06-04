@@ -1,0 +1,1 @@
+export default		{"navigate":"导航","suggestion":"建议","profile":"我的","login":"登录页","home":"首页","certification":"资质认证页"}

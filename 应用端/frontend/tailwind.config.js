@@ -1,0 +1,10 @@
+const spacePlugin = require('./tailwind-plugins/space');
+module.exports = {
+    "content": ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    "theme": {"extend":{"colors":{"primary":{"50":"#f2f5f8","100":"#e1e7ee","200":"#c3d0dd","300":"#9fb4c8","400":"#7b98b3","500":"#5a7c9e","600":"#486380","700":"#364b62","800":"#283845","900":"#1a2635"},"secondary":{"50":"#f1f4f7","100":"#dde3eb","200":"#bbc7d6","300":"#94a7bf","400":"#6d87a8","500":"#4a678f","600":"#3a5171","700":"#2b3c54","800":"#1d2838","900":"#0d1b2a"},"success":{"50":"#f0f9f2","100":"#dbf0e0","200":"#b7e2c1","300":"#8fd4a0","400":"#67c67f","500":"#42b861","600":"#35934e","700":"#286e3b","800":"#1b4928","900":"#0e2414"},"warning":{"50":"#fff9eb","100":"#fff0cc","200":"#ffe199","300":"#ffd266","400":"#ffc333","500":"#ffb400","600":"#cc9000","700":"#996c00","800":"#664800","900":"#332400"},"danger":{"50":"#fef2f2","100":"#fde3e3","200":"#fbc7c7","300":"#f9abab","400":"#f68f8f","500":"#f37373","600":"#c25c5c","700":"#924545","800":"#612e2e","900":"#311717"},"neutral":{"50":"#f8f9fa","100":"#f1f3f5","200":"#e9ecef","300":"#dee2e6","400":"#ced4da","500":"#adb5bd","600":"#868e96","700":"#495057","800":"#343a40","900":"#212529"},"text-primary":{"50":"#f8fafc","100":"#f1f5f9","200":"#e2e8f0","300":"#cbd5e1","400":"#94a3b8","500":"#64748b","600":"#475569","700":"#334155","800":"#1e293b","900":"#0f172a"},"text-secondary":{"50":"#f9fafb","100":"#f3f4f6","200":"#e5e7eb","300":"#d1d5db","400":"#9ca3af","500":"#6b7280","600":"#4b5563","700":"#374151","800":"#1f2937","900":"#111827"}},"fontWeight":{"normal":400,"medium":500,"semibold":600,"bold":700,"extrabold":800},"fontSize":{"hero":["1.8rem",{"lineHeight":"2.16rem","fontWeight":"800"}],"title":["1.4rem",{"lineHeight":"1.82rem","fontWeight":"700"}],"subtitle":["1rem",{"lineHeight":"1.35rem","fontWeight":"600"}],"body":["0.8rem",{"lineHeight":"1.2rem","fontWeight":"400"}],"caption":["0.65rem",{"lineHeight":"0.9425rem","fontWeight":"400"}],"overline":["0.55rem",{"lineHeight":"0.77rem","fontWeight":"500"}]}}},
+    "plugins": [spacePlugin],
+    "corePlugins": {
+          space: false, // 禁用默认的 space
+        "preflight": false,
+    },
+}
