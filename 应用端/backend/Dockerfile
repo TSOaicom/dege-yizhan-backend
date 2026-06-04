@@ -1,8 +1,7 @@
 FROM eclipse-temurin:8-jdk-focal AS build
 WORKDIR /app
-ARG CACHE_BUST=20260604v3
 COPY . .
-RUN chmod +x mvnw && ./mvnw clean package -P mysql -DskipTests
+RUN echo "build-20260604v4" && chmod +x mvnw && ./mvnw clean package -P mysql -DskipTests
 
 FROM eclipse-temurin:8-jre-focal
 WORKDIR /app
