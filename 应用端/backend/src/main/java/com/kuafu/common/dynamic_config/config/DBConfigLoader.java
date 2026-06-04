@@ -25,7 +25,7 @@ import java.util.Properties;
  */
 @Component
 @Slf4j
-//@DependsOn("flyway")
+@DependsOn(value = {"flywayInitializer"})
 public class DBConfigLoader {
 
     @Autowired
